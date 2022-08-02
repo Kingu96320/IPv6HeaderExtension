@@ -250,9 +250,9 @@ def main():
 	###LETS DO SOME CHECKS FIRST TO SEE IF WE CAN WORK###	
 	print('id', os.getpid())
 	print('values=>', values)
-	if os.getpid() != 0:
-		print ("You must be root to run this script.")
-		exit(1)  
+	# if os.getpid() != 0:
+	# 	print ("You must be root to run this script.")
+	# 	exit(1)  
 	#Define the default behaviour
 	if (not values.rec) and (not values.pn) and (not values.pmtu) and (not values.mpn) and (not values.nsol) and (not values.sS) and (not values.sX) and (not values.sA) and (not values.sN) and (not values.sR) and (not values.sF) and (not values.sU) and (not values.tr_gr) and (not values.tr_gen) and (not values.rh0) and (not values.dns):
 		print ("Please define the type of scan you want to perform") 
