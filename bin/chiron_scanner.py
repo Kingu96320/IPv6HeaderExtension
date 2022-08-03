@@ -248,8 +248,6 @@ def main():
 	values = parser.parse_args()
 
 	###LETS DO SOME CHECKS FIRST TO SEE IF WE CAN WORK###	
-	print('id', os.getpid())
-	print('values=>', values)
 	# if os.getpid() != 0:
 	# 	print ("You must be root to run this script.")
 	# 	exit(1)  
@@ -261,7 +259,7 @@ def main():
 
 	#GET YOUR SOURCE IPV6 AND MAC ADDRESS
 	mac_source=definitions.define_source_mac_address(values.mac_source,values.random_mac)
-	source_ip,mac_source= definitions.define_source_ipv6_address(values.source,mac_source,values.interface,values.random_source,values.prefix)
+	source_ip= definitions.define_source_ipv6_address(values.source,mac_source,values.interface,values.random_source,values.prefix)
 
 	q = multiprocessing.JoinableQueue()
 	sum_of_results = multiprocessing.Queue()

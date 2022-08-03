@@ -11,7 +11,7 @@ import fileio
 version = '0.9'
 
 ###DEFINE THE SOURCE MAC ADDRESS###
-def define_source_mac_address(vmac_source,vrandom_mac):
+def define_source_mac_address(vmac_source, vrandom_mac):
 	mac_source=vmac_source
 	if mac_source:
 		if re.match("[0-9a-f]{2}([:])[0-9a-f]{2}(\\1[0-9a-f]{2}){4}$", mac_source.lower()):
@@ -25,7 +25,7 @@ def define_source_mac_address(vmac_source,vrandom_mac):
 	return mac_source
 	
 ###DEFINE THE SOURCE IPV6 ADDRESS###
-def define_source_ipv6_address(vsource,mac_source,vinterface,vrandom_source,vprefix):
+def define_source_ipv6_address(vsource, mac_source, vinterface, vrandom_source, vprefix):
 	source_ip = False
 	if vsource:#If spoofed
 		source_ip = vsource

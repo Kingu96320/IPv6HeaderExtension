@@ -6,7 +6,7 @@ version = '0.9'
 def get_my_ip(interface):
 	myip=""
 	try:
-		mymac = scapy.layers.l2.get_if_hwaddr(interface) #my MAC address
+		mymac = scapy.get_if_hwaddr(interface) #my MAC address
 		for ifaces in scapy.arch.linux.in6_getifaddr(): 	 #in6_getifaddr()  #return a list of IPs - ifaces, etc
 			if ifaces[2]==interface:
 				if not myip:
@@ -21,7 +21,7 @@ def get_my_ip(interface):
 def get_my_link_local_ip(interface):
 	myip=""
 	try:
-		mymac = scapy.layers.l2.get_if_hwaddr(interface) #my MAC address
+		mymac = scapy.get_if_hwaddr(interface) #my MAC address
 		for ifaces in scapy.arch.linux.in6_getifaddr(): 	 #in6_getifaddr()  #return a list of IPs - ifaces, etc
 			if ifaces[2]==interface:
 				if ifaces[0][0:6] == "fe80::":
